@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloTumuk Challenge</title>
+    
+    <!-- Importando fuentes de Google con estilo futurista -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Fondo oscuro radial para dar profundidad */
+            background: radial-gradient(circle at center, #101520 0%, #050505 100%);
+            font-family: 'Rajdhani', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem 1rem 1rem;
+        }
+
+        /* Estilo para el logo y animación flotante */
+        .logo-img {
+            max-width: 280px;
+            filter: drop-shadow(0 0 20px rgba(122, 255, 0, 0.4));
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            margin: 1rem 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Colores extraídos del texto del logo */
+        .color-solo { color: #ffffff; }
+        .color-tumuk { 
+            color: #d66c3a; /* Naranja/Tierra */
+            text-shadow: 0 0 15px rgba(214, 108, 58, 0.8);
+        }
+
+        main {
+            padding: 2rem 1rem;
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        /* Panel futurista de contenido */
+        .panel {
+            background: rgba(16, 25, 40, 0.85);
+            border: 2px solid #00e5ff; /* Azul cian */
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.2), inset 0 0 20px rgba(122, 255, 0, 0.1);
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Línea superior decorativa del panel */
+        .panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #00e5ff, #7aff00, #00e5ff);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #7aff00; /* Verde neón */
+            font-size: 2.2rem;
+            margin-top: 0;
+            text-shadow: 0 0 10px rgba(122, 255, 0, 0.6);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #b3d4ff;
+        }
+
+        /* Botón estilo Cyberpunk/Neón */
+        .boton-reto {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 15px 40px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #050505;
+            background-color: #7aff00; /* Verde neón */
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(122, 255, 0, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .boton-reto:hover {
+            background-color: #00e5ff; /* Cambia a azul cian */
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 40px rgba(0, 229, 255, 0.5);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Logo cargado desde el archivo de tu computadora -->
+        <img src="solotumuk.jpg" alt="Logo SoloTumuk" class="logo-img">
+        
+        <!-- Título con los colores del logo -->
+        <h1><span class="color-solo">SOLO</span><span class="color-tumuk">TUMUK</span></h1>
+    </header>
+
+    <main>
+        <div class="panel">
+            <h2>¡Empezó la nueva era!</h2>
+            <p>
+                Has ingresado a la red oficial del <strong>SoloTumuk Challenge</strong>. 
+                Prepárate para superar tus límites. ¿Tienes lo necesario para alcanzar la cima?
+            </p>
+            
+            <a href="perfiles.html" class="boton-reto">Revisar perfiles de tumukeros</a>
+        </div>
+    </main>
+
+</body>
+</html>

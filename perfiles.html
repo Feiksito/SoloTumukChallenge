@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfiles - SoloTumuk Challenge</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background: radial-gradient(circle at top, #101520 0%, #050505 100%);
+            font-family: 'Rajdhani', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            width: 100%;
+            border-bottom: 2px solid #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+            background: rgba(16, 25, 40, 0.9);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #7aff00;
+            text-shadow: 0 0 10px rgba(122, 255, 0, 0.5);
+        }
+
+        main {
+            padding: 3rem 1rem;
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
+        }
+
+        .lista-perfiles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .encabezados-tabla {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            margin-bottom: -0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            color: #b3d4ff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px dashed rgba(0, 229, 255, 0.5);
+        }
+
+        .encabezado-stats {
+            display: flex;
+            gap: 15px;
+        }
+
+        .encabezado-stat-item {
+            min-width: 90px;
+            text-align: center;
+        }
+
+        .item-lista {
+            background: rgba(16, 25, 40, 0.6);
+            border-left: 5px solid #d66c3a;
+            border-radius: 6px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 10px rgba(214, 108, 58, 0.05);
+        }
+
+        .item-lista:hover {
+            transform: translateX(10px);
+            border-left-color: #7aff00;
+            background: rgba(20, 35, 55, 0.8);
+            box-shadow: 0 0 15px rgba(122, 255, 0, 0.2), inset 0 0 15px rgba(122, 255, 0, 0.1);
+        }
+
+        .info-jugador {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .foto-perfil {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00e5ff;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+            background-color: #1a2536;
+        }
+
+        .nombre-tumukero {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+        }
+
+        .stats-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Medallas base */
+        .stat-badge {
+            font-weight: bold;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Espacio entre el icono y el texto */
+            min-width: 100px;
+        }
+
+        /* Imagen del rango (minilogo) */
+        .icono-rango {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* COLORES PERSONALIZADOS PARA CADA LIGA */
+        
+        /* Master: Morado */
+        .badge-master {
+            color: #b300ff;
+            background: rgba(179, 0, 255, 0.15);
+            border: 1px solid rgba(179, 0, 255, 0.5);
+            box-shadow: inset 0 0 8px rgba(179, 0, 255, 0.2);
+        }
+
+        /* Esmeralda: Verde */
+        .badge-esmeralda {
+            color: #2ecc71;
+            background: rgba(46, 204, 113, 0.15);
+            border: 1px solid rgba(46, 204, 113, 0.5);
+            box-shadow: inset 0 0 8px rgba(46, 204, 113, 0.2);
+        }
+
+        /* Platino: Aqua */
+        .badge-platino {
+            color: #00ffff;
+            background: rgba(0, 255, 255, 0.15);
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.2);
+        }
+
+        /* Bronce: Café */
+        .badge-bronce {
+            color: #cd7f32;
+            background: rgba(205, 127, 50, 0.15);
+            border: 1px solid rgba(205, 127, 50, 0.5);
+            box-shadow: inset 0 0 8px rgba(205, 127, 50, 0.2);
+        }
+
+        /* Oro: Amarillo */
+        .badge-oro {
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Puntos de Liga (PL) */
+        .badge-pl {
+            color: #00e5ff;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            min-width: 80px;
+        }
+
+        /* Botón OP.GG */
+        .boton-opgg {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 6px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #050505;
+            background-color: #00e5ff;
+            border: 1px solid #00e5ff;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+            transition: all 0.3s ease;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .boton-opgg:hover {
+            background-color: transparent;
+            color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+        }
+
+        .boton-volver {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 10px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: #00e5ff;
+            background-color: transparent;
+            border: 2px solid #00e5ff;
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .boton-volver:hover {
+            background-color: #00e5ff;
+            color: #000;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .item-lista, .encabezados-tabla {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            .encabezado-stats, .stats-container {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Base de Datos: Tumukeros</h1>
+    </header>
+
+    <main>
+        <div class="lista-perfiles">
+            
+            <!-- Fila de Encabezados -->
+            <div class="encabezados-tabla">
+                <div>Participantes</div>
+                <div class="encabezado-stats">
+                    <div class="encabezado-stat-item">Elo Inicial</div>
+                    <div class="encabezado-stat-item">PL Inicial</div>
+                    <div class="encabezado-stat-item">Perfil</div>
+                </div>
+            </div>
+
+            <!-- Emhil -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <img src="emhil.jpg" alt="Emhil" class="foto-perfil">
+                    <div class="nombre-tumukero">Emhil</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-master">
+                        <img src="master.jpg" alt="Master" class="icono-rango"> Master
+                    </div>
+                    <div class="stat-badge badge-pl">9 PL</div>
+                    <a href="https://op.gg/es/lol/summoners/na/EmhilPhoenix-NA1" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+            
+            <!-- Tongi -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <img src="tongi.jpg" alt="Tongi" class="foto-perfil">
+                    <div class="nombre-tumukero">Tongi</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-esmeralda">
+                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
+                    </div>
+                    <div class="stat-badge badge-pl">6 PL</div>
+                    <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+
+            <!-- Snake -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <img src="snake.jpg" alt="Snake" class="foto-perfil">
+                    <div class="nombre-tumukero">Snake</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-platino">
+                        <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 2
+                    </div>
+                    <div class="stat-badge badge-pl">15 PL</div>
+                    <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+
+            <!-- Jeiky -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <img src="jeiky.jpg" alt="Jeiky" class="foto-perfil">
+                    <div class="nombre-tumukero">Jeiky</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-bronce">
+                        <img src="bronce.jpg" alt="Bronce" class="icono-rango"> Bronze
+                    </div>
+                    <div class="stat-badge badge-pl">? PL</div>
+                    <a href="https://op.gg/es/lol/summoners/na/JeikyKu-NA1" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+
+            <!-- Pollo -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <img src="pollo.jpg" alt="Pollo" class="foto-perfil">
+                    <div class="nombre-tumukero">Pollo</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-oro">
+                        <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 4
+                    </div>
+                    <div class="stat-badge badge-pl">0 PL</div>
+                    <a href="https://op.gg/es/lol/summoners/na/Sadness%20X-ice" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+
+            <!-- Feik -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <img src="feik.jpg" alt="Feik" class="foto-perfil">
+                    <div class="nombre-tumukero">Feik</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-oro">
+                        <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 3
+                    </div>
+                    <div class="stat-badge badge-pl">32 PL</div>
+                    <a href="https://op.gg/es/lol/summoners/na/Regresa%20evelin-teamo" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;">
+            <a href="tumuk.html" class="boton-volver">Volver al Inicio</a>
+        </div>
+    </main>
+
+</body>
+</html>
