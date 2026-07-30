@@ -42,7 +42,7 @@
         main {
             padding: 3rem 1rem;
             width: 100%;
-            max-width: 950px; /* Un poco más ancho para que quepa el botón de votos */
+            max-width: 1150px;
             box-sizing: border-box;
         }
 
@@ -101,6 +101,23 @@
             gap: 1.5rem;
         }
 
+        /* Estilo para los números de posición */
+        .rango-numero {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #00e5ff;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+            width: 45px;
+            text-align: center;
+        }
+
+        /* Color especial para el primer lugar */
+        .top-1 {
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
         .foto-perfil {
             width: 60px;
             height: 60px;
@@ -122,26 +139,26 @@
         .stats-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .stat-badge {
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 6px 15px;
+            padding: 6px 12px;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            min-width: 100px;
+            gap: 6px;
+            min-width: 90px;
         }
 
         .icono-rango {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             object-fit: contain;
         }
 
@@ -184,6 +201,27 @@
             color: #00e5ff;
             background: rgba(0, 229, 255, 0.1);
             border: 1px solid rgba(0, 229, 255, 0.3);
+            min-width: 70px;
+        }
+
+        .badge-record {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            min-width: 80px;
+        }
+
+        .badge-lpg {
+            color: #7aff00; 
+            background: rgba(122, 255, 0, 0.1);
+            border: 1px solid rgba(122, 255, 0, 0.4);
+            min-width: 80px;
+        }
+
+        .badge-lpg-negativo {
+            color: #ff4757; 
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid rgba(255, 71, 87, 0.4);
             min-width: 80px;
         }
 
@@ -200,7 +238,7 @@
             border: 1px solid #00e5ff;
             box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
             transition: all 0.3s ease;
-            min-width: 80px;
+            min-width: 70px;
             text-align: center;
         }
 
@@ -231,7 +269,6 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
         }
 
-        /* Estilo para integrar el botón de likes */
         .contenedor-like {
             min-width: 80px;
             display: flex;
@@ -239,7 +276,7 @@
             justify-content: center;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 950px) {
             .item-lista, .encabezados-tabla {
                 flex-direction: column;
                 gap: 1rem;
@@ -267,104 +304,17 @@
                 <div class="encabezado-stats">
                     <div class="encabezado-stat-item">Elo Inicial</div>
                     <div class="encabezado-stat-item">PL Inicial</div>
+                    <div class="encabezado-stat-item">Récord</div>
+                    <div class="encabezado-stat-item">LP Ganado</div>
                     <div class="encabezado-stat-item">Perfil</div>
                     <div class="encabezado-stat-item">Votos</div>
                 </div>
             </div>
 
-            <!-- Emhil -->
+            <!-- Posición 1: Feik (+33 LP) -->
             <div class="item-lista">
                 <div class="info-jugador">
-                    <img src="emhil.jpg" alt="Emhil" class="foto-perfil">
-                    <div class="nombre-tumukero">Emhil</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-master">
-                        <img src="master.jpg" alt="Master" class="icono-rango"> Master
-                    </div>
-                    <div class="stat-badge badge-pl">9 PL</div>
-                    <a href="https://op.gg/es/lol/summoners/na/EmhilPhoenix-NA1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="emhil_voto"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tongi -->
-            <div class="item-lista">
-                <div class="info-jugador">
-                    <img src="tongi.jpg" alt="Tongi" class="foto-perfil">
-                    <div class="nombre-tumukero">Tongi</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-esmeralda">
-                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
-                    </div>
-                    <div class="stat-badge badge-pl">6 PL</div>
-                    <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="tongi_voto"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Snake -->
-            <div class="item-lista">
-                <div class="info-jugador">
-                    <img src="snake.jpg" alt="Snake" class="foto-perfil">
-                    <div class="nombre-tumukero">Snake</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-platino">
-                        <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 2
-                    </div>
-                    <div class="stat-badge badge-pl">15 PL</div>
-                    <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="snake_voto"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Jeiky -->
-            <div class="item-lista">
-                <div class="info-jugador">
-                    <img src="jeiky.jpg" alt="Jeiky" class="foto-perfil">
-                    <div class="nombre-tumukero">Jeiky</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-bronce">
-                        <img src="bronce.jpg" alt="Bronce" class="icono-rango"> Bronze
-                    </div>
-                    <div class="stat-badge badge-pl">? PL</div>
-                    <a href="https://op.gg/es/lol/summoners/na/JeikyKu-NA1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="jeiky_voto"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pollo -->
-            <div class="item-lista">
-                <div class="info-jugador">
-                    <img src="pollo.jpg" alt="Pollo" class="foto-perfil">
-                    <div class="nombre-tumukero">Pollo</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-oro">
-                        <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 4
-                    </div>
-                    <div class="stat-badge badge-pl">0 PL</div>
-                    <a href="https://op.gg/es/lol/summoners/na/Sadness%20X-ice" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="pollo_voto"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Feik -->
-            <div class="item-lista">
-                <div class="info-jugador">
+                    <div class="rango-numero top-1">#1</div>
                     <img src="feik.jpg" alt="Feik" class="foto-perfil">
                     <div class="nombre-tumukero">Feik</div>
                 </div>
@@ -373,9 +323,116 @@
                         <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 3
                     </div>
                     <div class="stat-badge badge-pl">32 PL</div>
+                    <div class="stat-badge badge-record">3V - 1D</div>
+                    <div class="stat-badge badge-lpg">+33 LP</div>
                     <a href="https://op.gg/es/lol/summoners/na/Regresa%20evelin-teamo" target="_blank" class="boton-opgg">OP.GG</a>
                     <div class="contenedor-like">
                         <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="feik_voto"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posición 2: Tongui (+0 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#2</div>
+                    <img src="tongi.jpg" alt="Tongui" class="foto-perfil">
+                    <div class="nombre-tumukero">Tongui</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-esmeralda">
+                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
+                    </div>
+                    <div class="stat-badge badge-pl">6 PL</div>
+                    <div class="stat-badge badge-record">2V - 2D</div>
+                    <div class="stat-badge badge-lpg">+0 LP</div>
+                    <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="tongi_voto"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posición 3: Snake (+0 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#3</div>
+                    <img src="snake.jpg" alt="Snake" class="foto-perfil">
+                    <div class="nombre-tumukero">Snake</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-platino">
+                        <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 2
+                    </div>
+                    <div class="stat-badge badge-pl">15 PL</div>
+                    <div class="stat-badge badge-record">0V - 0D</div>
+                    <div class="stat-badge badge-lpg">+0 LP</div>
+                    <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="snake_voto"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posición 4: Jeiky (+0 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#4</div>
+                    <img src="jeiky.jpg" alt="Jeiky" class="foto-perfil">
+                    <div class="nombre-tumukero">Jeiky</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-bronce">
+                        <img src="bronce.jpg" alt="Bronce" class="icono-rango"> Bronze
+                    </div>
+                    <div class="stat-badge badge-pl">? PL</div>
+                    <div class="stat-badge badge-record">0V - 0D</div>
+                    <div class="stat-badge badge-lpg">+0 LP</div>
+                    <a href="https://op.gg/es/lol/summoners/na/JeikyKu-NA1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="jeiky_voto"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posición 5: Pollo (+0 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#5</div>
+                    <img src="pollo.jpg" alt="Pollo" class="foto-perfil">
+                    <div class="nombre-tumukero">Pollo</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-oro">
+                        <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 4
+                    </div>
+                    <div class="stat-badge badge-pl">0 PL</div>
+                    <div class="stat-badge badge-record">0V - 0D</div>
+                    <div class="stat-badge badge-lpg">+0 LP</div>
+                    <a href="https://op.gg/es/lol/summoners/na/Sadness%20X-ice" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="pollo_voto"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posición 6: Emhil (-20 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#6</div>
+                    <img src="emhil.jpg" alt="Emhil" class="foto-perfil">
+                    <div class="nombre-tumukero">Emhil</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-master">
+                        <img src="master.jpg" alt="Master" class="icono-rango"> Master
+                    </div>
+                    <div class="stat-badge badge-pl">9 PL</div>
+                    <div class="stat-badge badge-record">2V - 5D</div>
+                    <div class="stat-badge badge-lpg-negativo">-20 LP</div>
+                    <a href="https://op.gg/es/lol/summoners/na/EmhilPhoenix-NA1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="emhil_voto"></span>
                     </div>
                 </div>
             </div>
@@ -387,7 +444,6 @@
         </div>
     </main>
 
-    <!-- Script oficial de LikeBtn para que funcionen los votos -->
     <script>
         (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
     </script>
