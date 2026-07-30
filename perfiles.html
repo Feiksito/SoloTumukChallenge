@@ -42,7 +42,7 @@
         main {
             padding: 3rem 1rem;
             width: 100%;
-            max-width: 900px;
+            max-width: 950px; /* Un poco más ancho para que quepa el botón de votos */
             box-sizing: border-box;
         }
 
@@ -125,7 +125,6 @@
             gap: 15px;
         }
 
-        /* Medallas base */
         .stat-badge {
             font-weight: bold;
             font-size: 1rem;
@@ -136,20 +135,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px; /* Espacio entre el icono y el texto */
+            gap: 8px;
             min-width: 100px;
         }
 
-        /* Imagen del rango (minilogo) */
         .icono-rango {
             width: 24px;
             height: 24px;
             object-fit: contain;
         }
 
-        /* COLORES PERSONALIZADOS PARA CADA LIGA */
-        
-        /* Master: Morado */
         .badge-master {
             color: #b300ff;
             background: rgba(179, 0, 255, 0.15);
@@ -157,7 +152,6 @@
             box-shadow: inset 0 0 8px rgba(179, 0, 255, 0.2);
         }
 
-        /* Esmeralda: Verde */
         .badge-esmeralda {
             color: #2ecc71;
             background: rgba(46, 204, 113, 0.15);
@@ -165,7 +159,6 @@
             box-shadow: inset 0 0 8px rgba(46, 204, 113, 0.2);
         }
 
-        /* Platino: Aqua */
         .badge-platino {
             color: #00ffff;
             background: rgba(0, 255, 255, 0.15);
@@ -173,7 +166,6 @@
             box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.2);
         }
 
-        /* Bronce: Café */
         .badge-bronce {
             color: #cd7f32;
             background: rgba(205, 127, 50, 0.15);
@@ -181,7 +173,6 @@
             box-shadow: inset 0 0 8px rgba(205, 127, 50, 0.2);
         }
 
-        /* Oro: Amarillo */
         .badge-oro {
             color: #ffd700;
             background: rgba(255, 215, 0, 0.15);
@@ -189,7 +180,6 @@
             box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.2);
         }
 
-        /* Puntos de Liga (PL) */
         .badge-pl {
             color: #00e5ff;
             background: rgba(0, 229, 255, 0.1);
@@ -197,7 +187,6 @@
             min-width: 80px;
         }
 
-        /* Botón OP.GG */
         .boton-opgg {
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
@@ -242,6 +231,14 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
         }
 
+        /* Estilo para integrar el botón de likes */
+        .contenedor-like {
+            min-width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         @media (max-width: 768px) {
             .item-lista, .encabezados-tabla {
                 flex-direction: column;
@@ -265,13 +262,13 @@
     <main>
         <div class="lista-perfiles">
             
-            <!-- Fila de Encabezados -->
             <div class="encabezados-tabla">
                 <div>Participantes</div>
                 <div class="encabezado-stats">
                     <div class="encabezado-stat-item">Elo Inicial</div>
                     <div class="encabezado-stat-item">PL Inicial</div>
                     <div class="encabezado-stat-item">Perfil</div>
+                    <div class="encabezado-stat-item">Votos</div>
                 </div>
             </div>
 
@@ -287,6 +284,9 @@
                     </div>
                     <div class="stat-badge badge-pl">9 PL</div>
                     <a href="https://op.gg/es/lol/summoners/na/EmhilPhoenix-NA1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="emhil_voto"></span>
+                    </div>
                 </div>
             </div>
             
@@ -302,6 +302,9 @@
                     </div>
                     <div class="stat-badge badge-pl">6 PL</div>
                     <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="tongi_voto"></span>
+                    </div>
                 </div>
             </div>
 
@@ -317,6 +320,9 @@
                     </div>
                     <div class="stat-badge badge-pl">15 PL</div>
                     <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="snake_voto"></span>
+                    </div>
                 </div>
             </div>
 
@@ -332,6 +338,9 @@
                     </div>
                     <div class="stat-badge badge-pl">? PL</div>
                     <a href="https://op.gg/es/lol/summoners/na/JeikyKu-NA1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="jeiky_voto"></span>
+                    </div>
                 </div>
             </div>
 
@@ -347,6 +356,9 @@
                     </div>
                     <div class="stat-badge badge-pl">0 PL</div>
                     <a href="https://op.gg/es/lol/summoners/na/Sadness%20X-ice" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="pollo_voto"></span>
+                    </div>
                 </div>
             </div>
 
@@ -362,6 +374,9 @@
                     </div>
                     <div class="stat-badge badge-pl">32 PL</div>
                     <a href="https://op.gg/es/lol/summoners/na/Regresa%20evelin-teamo" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="feik_voto"></span>
+                    </div>
                 </div>
             </div>
 
@@ -372,5 +387,9 @@
         </div>
     </main>
 
+    <!-- Script oficial de LikeBtn para que funcionen los votos -->
+    <script>
+        (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
+    </script>
 </body>
 </html>
