@@ -42,7 +42,7 @@
         main {
             padding: 3rem 1rem;
             width: 100%;
-            max-width: 1150px;
+            max-width: 1350px;
             box-sizing: border-box;
         }
 
@@ -208,6 +208,13 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             min-width: 80px;
         }
+        
+        .badge-wr {
+            color: #f1c40f;
+            background: rgba(241, 196, 15, 0.1);
+            border: 1px solid rgba(241, 196, 15, 0.4);
+            min-width: 70px;
+        }
 
         .badge-lpg {
             color: #7aff00; 
@@ -274,7 +281,7 @@
             justify-content: center;
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: 1050px) {
             .item-lista, .encabezados-tabla {
                 flex-direction: column;
                 gap: 1rem;
@@ -303,7 +310,9 @@
                     <div class="encabezado-stat-item">Elo Inicial</div>
                     <div class="encabezado-stat-item">PL Inicial</div>
                     <div class="encabezado-stat-item">Récord</div>
+                    <div class="encabezado-stat-item">% WR</div>
                     <div class="encabezado-stat-item">LP Ganado</div>
+                    <div class="encabezado-stat-item">Elo Actual</div>
                     <div class="encabezado-stat-item">Perfil</div>
                     <div class="encabezado-stat-item">Votos</div>
                 </div>
@@ -322,7 +331,11 @@
                     </div>
                     <div class="stat-badge badge-pl">9 PL</div>
                     <div class="stat-badge badge-record">8V - 6D</div>
+                    <div class="stat-badge badge-wr">57%</div>
                     <div class="stat-badge badge-lpg">+117 LP</div>
+                    <div class="stat-badge badge-master">
+                        <img src="master.jpg" alt="Master" class="icono-rango"> Master
+                    </div>
                     <a href="https://op.gg/es/lol/summoners/na/EmhilPhoenix-NA1" target="_blank" class="boton-opgg">OP.GG</a>
                     <div class="contenedor-like">
                         <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="emhil_voto"></span>
@@ -343,7 +356,11 @@
                     </div>
                     <div class="stat-badge badge-pl">32 PL</div>
                     <div class="stat-badge badge-record">12V - 6D</div>
+                    <div class="stat-badge badge-wr">67%</div>
                     <div class="stat-badge badge-lpg">+114 LP</div>
+                    <div class="stat-badge badge-oro">
+                        <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 2
+                    </div>
                     <a href="https://op.gg/es/lol/summoners/na/Regresa%20evelin-teamo" target="_blank" class="boton-opgg">OP.GG</a>
                     <div class="contenedor-like">
                         <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="feik_voto"></span>
@@ -364,7 +381,11 @@
                     </div>
                     <div class="stat-badge badge-pl">0 PL</div>
                     <div class="stat-badge badge-record">4V - 2D</div>
+                    <div class="stat-badge badge-wr">67%</div>
                     <div class="stat-badge badge-lpg">+42 LP</div>
+                    <div class="stat-badge badge-oro">
+                        <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 4
+                    </div>
                     <a href="https://op.gg/es/lol/summoners/na/Sadness%20X-ice" target="_blank" class="boton-opgg">OP.GG</a>
                     <div class="contenedor-like">
                         <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="pollo_voto"></span>
@@ -372,41 +393,24 @@
                 </div>
             </div>
 
-            <!-- Posición 4: Snake (+0 LP) -->
+            <!-- Posición 4: Jeiky (+0 LP) -->
             <div class="item-lista">
                 <div class="info-jugador">
                     <div class="rango-numero">#4</div>
-                    <img src="snake.jpg" alt="Snake" class="foto-perfil">
-                    <div class="nombre-tumukero">Snake</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-platino">
-                        <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 2
-                    </div>
-                    <div class="stat-badge badge-pl">15 PL</div>
-                    <div class="stat-badge badge-record">0V - 0D</div>
-                    <div class="stat-badge badge-lpg">+0 LP</div>
-                    <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="snake_voto"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posición 5: Jeiky (+0 LP) -->
-            <div class="item-lista">
-                <div class="info-jugador">
-                    <div class="rango-numero">#5</div>
                     <img src="jeiky.jpg" alt="Jeiky" class="foto-perfil">
                     <div class="nombre-tumukero">Jeiky</div>
                 </div>
                 <div class="stats-container">
                     <div class="stat-badge badge-bronce">
-                        <img src="bronce.jpg" alt="Bronce" class="icono-rango"> Bronze
+                        <img src="bronce.jpg" alt="Bronce" class="icono-rango"> Bronce
                     </div>
                     <div class="stat-badge badge-pl">? PL</div>
                     <div class="stat-badge badge-record">0V - 0D</div>
+                    <div class="stat-badge badge-wr">0%</div>
                     <div class="stat-badge badge-lpg">+0 LP</div>
+                    <div class="stat-badge badge-bronce">
+                        <img src="bronce.jpg" alt="Bronce" class="icono-rango"> Bronce
+                    </div>
                     <a href="https://op.gg/es/lol/summoners/na/JeikyKu-NA1" target="_blank" class="boton-opgg">OP.GG</a>
                     <div class="contenedor-like">
                         <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="jeiky_voto"></span>
@@ -414,10 +418,10 @@
                 </div>
             </div>
 
-            <!-- Posición 6: Tongui (-6 LP) -->
+            <!-- Posición 5: Tongui (-6 LP) -->
             <div class="item-lista">
                 <div class="info-jugador">
-                    <div class="rango-numero">#6</div>
+                    <div class="rango-numero">#5</div>
                     <img src="tongui.jpg" alt="Tongui" class="foto-perfil">
                     <div class="nombre-tumukero">Tongui</div>
                 </div>
@@ -427,10 +431,39 @@
                     </div>
                     <div class="stat-badge badge-pl">6 PL</div>
                     <div class="stat-badge badge-record">9V - 8D</div>
+                    <div class="stat-badge badge-wr">53%</div>
                     <div class="stat-badge badge-lpg-negativo">-6 LP</div>
+                    <div class="stat-badge badge-esmeralda">
+                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
+                    </div>
                     <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
                     <div class="contenedor-like">
                         <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="tongi_voto"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posición 6: Snake (-18 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#6</div>
+                    <img src="snake.jpg" alt="Snake" class="foto-perfil">
+                    <div class="nombre-tumukero">Snake</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-platino">
+                        <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 2
+                    </div>
+                    <div class="stat-badge badge-pl">15 PL</div>
+                    <div class="stat-badge badge-record">0V - 1D</div>
+                    <div class="stat-badge badge-wr">0%</div>
+                    <div class="stat-badge badge-lpg-negativo">-18 LP</div>
+                    <div class="stat-badge badge-platino">
+                        <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 3
+                    </div>
+                    <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
+                    <div class="contenedor-like">
+                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="snake_voto"></span>
                     </div>
                 </div>
             </div>
