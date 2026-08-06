@@ -291,13 +291,6 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
         }
 
-        .contenedor-like {
-            min-width: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         @media (max-width: 1050px) {
             .item-lista, .encabezados-tabla {
                 flex-direction: column;
@@ -330,14 +323,37 @@
                     <div class="encabezado-stat-item">LP Ganado</div>
                     <div class="encabezado-stat-item">Elo Actual</div>
                     <div class="encabezado-stat-item">Perfil</div>
-                    <div class="encabezado-stat-item">Votos</div>
                 </div>
             </div>
 
-            <!-- Posición 1: Feik (+75 LP) -->
+            <!-- Posición 1: Tongui (+102 LP) -->
             <div class="item-lista">
                 <div class="info-jugador">
                     <div class="rango-numero top-1">#1</div>
+                    <img src="tongui.jpg" alt="Tongui" class="foto-perfil">
+                    <div class="nombre-tumukero">Tongui</div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-badge badge-esmeralda">
+                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
+                    </div>
+                    <div class="stat-badge badge-pl">6 PL</div>
+                    <div class="stat-badge badge-record">
+                        <span>16V - 10D</span>
+                        <span class="texto-wr">(62%)</span>
+                    </div>
+                    <div class="stat-badge badge-lpg">+102 LP</div>
+                    <div class="stat-badge badge-esmeralda">
+                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
+                    </div>
+                    <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
+                </div>
+            </div>
+
+            <!-- Posición 2: Feik (+75 LP) -->
+            <div class="item-lista">
+                <div class="info-jugador">
+                    <div class="rango-numero">#2</div>
                     <img src="feik.jpg" alt="Feik" class="foto-perfil">
                     <div class="nombre-tumukero">Feik</div>
                 </div>
@@ -355,36 +371,6 @@
                         <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 2
                     </div>
                     <a href="https://op.gg/es/lol/summoners/na/Regresa%20evelin-teamo" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="feik_voto"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posición 2: Tongui (+49 LP) -->
-            <div class="item-lista">
-                <div class="info-jugador">
-                    <div class="rango-numero">#2</div>
-                    <img src="tongui.jpg" alt="Tongui" class="foto-perfil">
-                    <div class="nombre-tumukero">Tongui</div>
-                </div>
-                <div class="stats-container">
-                    <div class="stat-badge badge-esmeralda">
-                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
-                    </div>
-                    <div class="stat-badge badge-pl">6 PL</div>
-                    <div class="stat-badge badge-record">
-                        <span>12V - 8D</span>
-                        <span class="texto-wr">(60%)</span>
-                    </div>
-                    <div class="stat-badge badge-lpg">+49 LP</div>
-                    <div class="stat-badge badge-esmeralda">
-                        <img src="esmeralda.jpg" alt="Esmeralda" class="icono-rango"> Emerald 4
-                    </div>
-                    <a href="https://op.gg/es/lol/summoners/na/tongui-DCOPN" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="tongi_voto"></span>
-                    </div>
                 </div>
             </div>
 
@@ -409,9 +395,6 @@
                         <img src="oro.jpg" alt="Oro" class="icono-rango"> Oro 4
                     </div>
                     <a href="https://op.gg/es/lol/summoners/na/Sadness%20X-ice" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="pollo_voto"></span>
-                    </div>
                 </div>
             </div>
 
@@ -436,9 +419,6 @@
                         <img src="hierro.jpg" alt="Hierro" class="icono-rango"> Hierro 1
                     </div>
                     <a href="https://op.gg/es/lol/summoners/na/JeikyKu-NA1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="jeiky_voto"></span>
-                    </div>
                 </div>
             </div>
 
@@ -463,9 +443,6 @@
                         <img src="platino.jpg" alt="Platino" class="icono-rango"> Platino 3
                     </div>
                     <a href="https://op.gg/es/lol/summoners/na/Padre%20del%20Pollo-LAN1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="snake_voto"></span>
-                    </div>
                 </div>
             </div>
 
@@ -490,9 +467,6 @@
                         <img src="diamond.jpg" alt="Diamante" class="icono-rango"> Diamante 1
                     </div>
                     <a href="https://op.gg/es/lol/summoners/na/EmhilPhoenix-NA1" target="_blank" class="boton-opgg">OP.GG</a>
-                    <div class="contenedor-like">
-                        <span class="likebtn-wrapper" data-theme="dark" data-dislike_enabled="false" data-identifier="emhil_voto"></span>
-                    </div>
                 </div>
             </div>
 
@@ -502,9 +476,5 @@
             <a href="index.html" class="boton-volver">Volver al Inicio</a>
         </div>
     </main>
-
-    <script>
-        (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
-    </script>
 </body>
 </html>
