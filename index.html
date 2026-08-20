@@ -3,152 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoloTumuk Challenge</title>
+    <title>Inicio - SoloTumuk Challenge 2026</title>
     
-    <!-- Importando fuentes de Google con estilo futurista -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         body {
-            /* Fondo oscuro radial para dar profundidad */
-            background: radial-gradient(circle at center, #101520 0%, #050505 100%);
+            background: radial-gradient(circle at center, #101520 0%, #020202 100%);
             font-family: 'Rajdhani', sans-serif;
             color: #ffffff;
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
 
-        header {
+        .contenedor-principal {
             text-align: center;
-            padding: 3rem 1rem 1rem 1rem;
+            background: rgba(16, 25, 40, 0.8);
+            padding: 2.5rem 2rem; /* Espaciado interno reducido */
+            border-radius: 15px;
+            border: 2px solid #00e5ff;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2), inset 0 0 20px rgba(0, 229, 255, 0.1);
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            backdrop-filter: blur(5px);
+            animation: aparecer 1s ease-out forwards;
         }
 
-        /* Estilo para el logo y animación flotante */
-        .logo-img {
-            max-width: 280px;
-            filter: drop-shadow(0 0 20px rgba(122, 255, 0, 0.4));
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Estilos para el logo del torneo */
+        .logo-solotumuk {
+            max-width: 120px; /* Tamaño del logo reducido */
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid #00e5ff;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+            margin-bottom: 1rem; /* Margen reducido */
             animation: flotar 3s ease-in-out infinite;
+            object-fit: cover;
         }
 
         @keyframes flotar {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-10px); box-shadow: 0 0 30px rgba(0, 229, 255, 0.8); }
             100% { transform: translateY(0px); }
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            margin: 1rem 0 0 0;
+            font-size: 2.8rem; /* Fuente ligeramente más pequeña */
+            margin: 0;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Colores extraídos del texto del logo */
-        .color-solo { color: #ffffff; }
-        .color-tumuk { 
-            color: #d66c3a; /* Naranja/Tierra */
-            text-shadow: 0 0 15px rgba(214, 108, 58, 0.8);
-        }
-
-        main {
-            padding: 2rem 1rem;
-            width: 100%;
-            max-width: 800px;
-            box-sizing: border-box;
-        }
-
-        /* Panel futurista de contenido */
-        .panel {
-            background: rgba(16, 25, 40, 0.85);
-            border: 2px solid #00e5ff; /* Azul cian */
-            border-radius: 12px;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.2), inset 0 0 20px rgba(122, 255, 0, 0.1);
-            position: relative;
-            backdrop-filter: blur(5px);
-        }
-
-        /* Línea superior decorativa del panel */
-        .panel::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #00e5ff, #7aff00, #00e5ff);
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            letter-spacing: 4px;
+            background: linear-gradient(to right, #00e5ff, #7aff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
         }
 
         h2 {
             font-family: 'Orbitron', sans-serif;
-            color: #7aff00; /* Verde neón */
-            font-size: 2.2rem;
-            margin-top: 0;
-            text-shadow: 0 0 10px rgba(122, 255, 0, 0.6);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        p {
             font-size: 1.3rem;
-            line-height: 1.6;
             color: #b3d4ff;
-        }
-
-        /* Botón estilo Cyberpunk/Neón */
-        .boton-reto {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 15px 40px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #050505;
-            background-color: #7aff00; /* Verde neón */
-            text-decoration: none;
-            border-radius: 4px;
+            letter-spacing: 8px;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem; /* Margen reducido */
             text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 0 15px rgba(122, 255, 0, 0.7);
-            transition: all 0.3s ease;
         }
 
-        .boton-reto:hover {
-            background-color: #00e5ff; /* Cambia a azul cian */
-            color: #000;
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 40px rgba(0, 229, 255, 0.5);
-            transform: scale(1.05);
+        .mensaje-agradecimiento {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 1rem 0;
+            line-height: 1.4;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .mensaje-secundario {
+            font-size: 1.1rem;
+            color: #a1b0c6;
+            margin-bottom: 2rem; /* Margen reducido */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .divisor {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+            margin: 1.5rem 0; /* Margen reducido */
+            opacity: 0.5;
+        }
+
+        .boton-perfiles {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #050505;
+            background-color: #7aff00;
+            border: none;
+            box-shadow: 0 0 20px rgba(122, 255, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .boton-perfiles::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        .boton-perfiles:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 30px rgba(122, 255, 0, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.8);
+            background-color: #8aff1a;
+        }
+
+        .boton-perfiles:hover::before {
+            left: 100%;
+        }
+
+        /* Partículas de fondo (puramente CSS) */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: #00e5ff;
+            top: -100px;
+            left: -100px;
+            animation: pulse 6s infinite alternate;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: #7aff00;
+            bottom: -50px;
+            right: -50px;
+            animation: pulse 8s infinite alternate-reverse;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.6; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.1rem; letter-spacing: 4px; }
+            .mensaje-agradecimiento { font-size: 1.3rem; }
+            .contenedor-principal { padding: 2rem 1.5rem; }
+            .logo-solotumuk { max-width: 100px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <!-- Logo cargado desde el archivo de tu computadora -->
-        <img src="solotumuk.jpg" alt="Logo SoloTumuk" class="logo-img">
-        
-        <!-- Título con los colores del logo -->
-        <h1><span class="color-solo">SOLO</span><span class="color-tumuk">TUMUK</span></h1>
-    </header>
+    <!-- Luces de fondo -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
 
-    <main>
-        <div class="panel">
-            <h2>¡Empezó la nueva era!</h2>
-            <p>
-                Has ingresado a la red oficial del <strong>SoloTumuk Challenge</strong>. 
-                Prepárate para superar tus límites. ¿Tienes lo necesario para alcanzar la cima?
-            </p>
-            
-            <a href="perfiles.html" class="boton-reto">Revisar perfiles de tumukeros</a>
-        </div>
-    </main>
+    <div class="contenedor-principal">
+        <!-- Logo del torneo -->
+        <img src="solotumuk.jpg" alt="Logo SoloTumuk Challenge" class="logo-solotumuk">
+        
+        <h1>SoloTumuk Challenge</h1>
+        <h2>Edición 2026</h2>
+        
+        <div class="divisor"></div>
+        
+        <p class="mensaje-agradecimiento">
+            ¡Gracias por participar en la edición 2026!
+        </p>
+        
+        <p class="mensaje-secundario">
+            El Nexo ha caído, las clasificaciones están cerradas y la historia ha sido escrita. Una temporada llena de tryhardeo, remontadas épicas y mucho LP. ¿Quién logró coronarse en la cima?
+        </p>
+        
+        <a href="perfiles.html" class="boton-perfiles">Ver Perfiles Finales</a>
+    </div>
 
 </body>
 </html>
